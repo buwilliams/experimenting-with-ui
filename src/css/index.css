@@ -8,13 +8,10 @@ body {
 }
 
 div#canvas {
-  position: absolute;
-  top: 50px;
-  left: 50px;
 }
 
 div.box {
-  position: relative;
+  position: absolute;
   display: block;
   background-color: #ccc;
 }
@@ -23,4 +20,14 @@ div.handle {
   display: block;
   background-color: #aaa;
   border: solid 1px #222;
+}
+
+div.dragbox {
+  position: absolute;
+  display: block;
+  border: solid 1px blue;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
 }
