@@ -7,22 +7,23 @@ function updateDrag() {
     resizeDragbox();
     //console.log(state.dragBox.width, state.dragBox.height);
   } else if(state.mouseDown === false && state.mouseDownStart.y !== -1) {
-    console.log('mouse up');
     resizeMainBox();
     clearDrag();
   }
 }
 
 function resizeDragbox() {
-  var distanceX = Math.abs(state.mouseDownCurrent.x - state.mouseDownStart.x);
-  var distanceY = Math.abs(state.mouseDownCurrent.y - state.mouseDownStart.y);
+  if(state.mouseDownCurrent.x !== -1 && state.mouseDownCurrent.y !== -1) {
+    var distanceX = Math.abs(state.mouseDownStart.x - state.mouseDownCurrent.x);
+    var distanceY = Math.abs(state.mouseDownStart.y - state.mouseDownCurrent.y);
 
-  if(distanceX >= state.dragBox.minDistance.x && distanceY >= state.dragBox.minDistance.y) {
-    state.dragBox.x = state.mouseDownStart.x;
-    state.dragBox.y = state.mouseDownStart.y;
-    state.dragBox.width = distanceX;
-    state.dragBox.height = distanceY;
-    state.dragBox.render = true;
+    if(distanceX >= state.dragBox.minDistance.x && distanceY >= state.dragBox.minDistance.y) {
+      state.dragBox.x = state.mouseDownStart.x;
+      state.dragBox.y = state.mouseDownStart.y;
+      state.dragBox.width = distanceX;
+      state.dragBox.height = distanceY;
+      state.dragBox.render = true;
+    }
   }
 }
 

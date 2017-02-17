@@ -5,15 +5,30 @@
 body {
   margin: 0;
   padding: 0;
+  color: 999;
 }
 
 div#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: default;
+}
+
+div#canvas.drag, div#canvas.drag:hover {
+  cursor: crosshair;
 }
 
 div.box {
   position: absolute;
   display: block;
   background-color: #ccc;
+}
+
+div.text {
+  position: absolute;
 }
 
 div.handle {

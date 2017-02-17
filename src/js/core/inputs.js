@@ -13,15 +13,15 @@ function mouseEvents() {
 
 function listenDragEvent() {
   $(document).mousedown(function(e) {
-    state.mouseDown = true;
     state.mouseDownStart.x = e.pageX;
     state.mouseDownStart.y = e.pageY;
+    state.mouseDown = true;
   });
 
   $(document).mouseup(function(e) {
-    state.mouseDown = false;
     state.mouseDownEnd.x = e.pageX;
     state.mouseDownEnd.y = e.pageY;
+    state.mouseDown = false;
   });
 
   $(document).mousemove(function(e) {

@@ -1,6 +1,12 @@
 function render() {
   if(typeof state.el === "string") state.el = $(state.el);
 
+  if(state.mouseDown && !state.el.hasClass(state.dragBox.mouseClassName)) {
+    state.el.addClass(state.dragBox.mouseClassName);
+  } else if (!state.mouseDown && state.el.hasClass(state.dragBox.mouseClassName)) {
+    state.el.removeClass(state.dragBox.mouseClassName);
+  }
+
   // 1. Clear the canvas
   state.el.empty();
 
@@ -30,6 +36,12 @@ function createBox(box) {
   var boxEl = $(`<div id="${box.id}"
                   class="${box.className}"
                   ${styles}></div>`);
+
+  if(typeof box.text !== 'undefined') {
+    if(box.text !== '') {
+      boxEl.text(box.text);
+    }
+  }
 
   if(box.displayHandles === true) {
     var handles = createHandles(box);
