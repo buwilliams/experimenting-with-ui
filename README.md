@@ -1,15 +1,23 @@
 # Experiments with Austin
 
-Simulate a Game Loop (state, logic, render)
+## Objective
+
+Teach the basics of building a GUI drawing tool using the DOM.
+
+## Concepts
+
+- Separate State from Methods
+- Game Loop (state, inputs, updates, render)
+- Constant updates to DOM
+- No UI frameworks, pure DOM (using jQuery to make it a little easier)
+- No build tools or severs
 
 ## Features
 
-- Game loop
-  - inputs()
-  - update()
-  - render()
-  - events()
-- Basic ability to drag the mouse to change the size of the box
+- Render text
+- Render boxes
+- Render resize box
+- Resize box after drag the mouse
 
 ## TODO
 
